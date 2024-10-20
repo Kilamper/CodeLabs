@@ -18,6 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -46,28 +47,28 @@ fun ComposeQuadrant() {
     Column(modifier = Modifier.fillMaxWidth()) {
         Row(modifier = Modifier.weight(1f)) {
             ComposeCard(
-                title = "Text composable",
-                text = "Displays text and follows the recommended Material Design guidelines.",
+                title = stringResource(R.string.title_1),
+                text = stringResource(R.string.text_1),
                 backgroundColor = Color(0xFFEADDFF),
                 modifier = Modifier.weight(1f)
             )
             ComposeCard(
-                title = "Image composable",
-                text = "Creates a composable that lays out and draws a given Painter class object.",
+                title = stringResource(R.string.title_2),
+                text = stringResource(R.string.text_2),
                 backgroundColor = Color(0xFFD0BCFF),
                 modifier = Modifier.weight(1f)
             )
         }
         Row(modifier = Modifier.weight(1f)) {
             ComposeCard(
-                title = "Row composable",
-                text = "A layout composable that places its children in a horizontal sequence.",
+                title = stringResource(R.string.title_3),
+                text = stringResource(R.string.text_3),
                 backgroundColor = Color(0xFFB69DF8),
                 modifier = Modifier.weight(1f)
             )
             ComposeCard(
-                title = "Column composable",
-                text = "A layout composable that places its children in a vertical sequence.",
+                title = stringResource(R.string.title_4),
+                text = stringResource(R.string.text_4),
                 backgroundColor = Color(0xFFF6EDFF),
                 modifier = Modifier.weight(1f)
             )
@@ -80,7 +81,10 @@ fun ComposeCard(title: String, text: String, backgroundColor: Color, modifier: M
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = modifier.fillMaxSize().background(backgroundColor).padding(16.dp)
+        modifier = modifier
+            .fillMaxSize()
+            .background(backgroundColor)
+            .padding(16.dp)
     ) {
         Text (
             text = title,
